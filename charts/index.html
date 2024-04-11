@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://572192274.github.io/img/default.png">
 <meta property="article:published_time" content="2024-04-11T13:20:45.000Z">
-<meta property="article:modified_time" content="2024-04-11T13:28:34.612Z">
+<meta property="article:modified_time" content="2024-04-11T14:05:25.396Z">
 <meta property="article:author" content="masterliu">
 <meta property="article:tag" content="码斋">
 <meta name="twitter:card" content="summary">
@@ -191,13 +191,13 @@ document.addEventListener('pjax:complete', () => {
     percent()
 })</script><div id="toggle-menu"><a class="site-page"><i class="solitude st-menu-line"></i></a></div></div></div></nav></header><main class="layout hide-aside" id="content-inner"><div id="page"><div id="article-container"><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script>
 <!-- 文章发布时间统计图 -->
-<div id="posts-chart" data-start="2021-01" style="border-radius: 8px; height: 300px; padding: 10px;"></div>
+<div id="posts-chart" data-start="2024-01" style="border-radius: 8px; height: 300px; padding: 10px;"></div>
   <script id="postsChart">
     var color = document.documentElement.getAttribute('data-theme') === 'light' ? '#4c4948' : 'rgba(255,255,255,0.7)'
     var postsChart = echarts.init(document.getElementById('posts-chart'), 'light');
     var postsOption = {
       title: {
-        text: '文章发布统计图',
+        text: '文章发布统计',
         x: 'center',
         textStyle: {
           color: color
@@ -226,7 +226,7 @@ document.addEventListener('pjax:complete', () => {
             color: color
           }
         },
-        data: ["2021-01","2021-02","2021-03","2021-04","2021-05","2021-06","2021-07","2021-08","2021-09","2021-10","2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05","2022-06","2022-07","2022-08","2022-09","2022-10","2022-11","2022-12","2023-01","2023-02","2023-03","2023-04","2023-05","2023-06","2023-07","2023-08","2023-09","2023-10","2023-11","2023-12","2024-01","2024-02","2024-03","2024-04"]
+        data: ["2024-01","2024-02","2024-03","2024-04"]
       },
       yAxis: {
         name: '文章篇数',
@@ -280,7 +280,7 @@ document.addEventListener('pjax:complete', () => {
             color: 'rgba(1, 191, 236)'
           }])
         },
-        data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+        data: [0,0,0,1],
         markLine: {
           data: [{
             name: '平均值',
@@ -307,7 +307,7 @@ document.addEventListener('pjax:complete', () => {
     var tagsChart = echarts.init(document.getElementById('tags-chart'), 'light');
     var tagsOption = {
       title: {
-        text: 'Top 1 标签统计图',
+        text: '最高文章数的1个标签',
         x: 'center',
         textStyle: {
           color: color
@@ -413,7 +413,7 @@ document.addEventListener('pjax:complete', () => {
     var categoryParentFlag = false
     var categoriesOption = {
       title: {
-        text: '文章分类统计图',
+        text: '分类文章统计',
         x: 'center',
         textStyle: {
           color: color
