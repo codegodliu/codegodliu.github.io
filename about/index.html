@@ -120,7 +120,7 @@ console.log(
     covercolor: {
         enable: false
     },
-    comment: {"avatar":"https://cravatar.cn","url":"https://ujpkklj7.api.lncldglobal.com","commentBarrage":true,"appId":"uJPKKLJ7wfYwc5XvhLVjkuz9-MdYXbMMI","appKey":"iJzRikaqa2tdeS1nQubTyE2x","owo":{"body":".vwrap","item":".vemojis i"}},
+    comment: {"avatar":"https://cravatar.cn","url":"https://0xiaeijg.api.lncldglobal.com","commentBarrage":true,"appId":"0xIAeIJgdRdXwToKkiFeOzp0-MdYXbMMI","appKey":"pTByOlWLacfjfBUR3mNIXhoM","owo":{"body":".vwrap","item":".vemojis i"}},
     lightbox: 'fancybox',
     post_ai: false,
     right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","music":{"start":"播放音乐","stop":"暂停音乐"},"barrage":{"open":"显示热评","close":"关闭热评"}},
@@ -247,10 +247,10 @@ document.getElementById("tenyear") && tenYear() && window.Pjax.on('complete', te
     const initValine = () => {
         const valine = new Valine(Object.assign({
             el: '#comment',
-            appId: 'uJPKKLJ7wfYwc5XvhLVjkuz9-MdYXbMMI',
-            appKey: 'iJzRikaqa2tdeS1nQubTyE2x',
+            appId: '0xIAeIJgdRdXwToKkiFeOzp0-MdYXbMMI',
+            appKey: 'pTByOlWLacfjfBUR3mNIXhoM',
             avatar: 'monsterid',
-            serverURLs: 'https://ujpkklj7.api.lncldglobal.com',
+            serverURLs: 'https://0xiaeijg.api.lncldglobal.com',
             emojiMaps: "",
             path: window.location.pathname,
             visitor: true,
@@ -324,13 +324,13 @@ document.getElementById("tenyear") && tenYear() && window.Pjax.on('complete', te
             const settings = {
                 "method": "GET",
                 "headers": {
-                    "X-LC-Id": 'uJPKKLJ7wfYwc5XvhLVjkuz9-MdYXbMMI',
-                    "X-LC-Key": 'iJzRikaqa2tdeS1nQubTyE2x',
+                    "X-LC-Id": '0xIAeIJgdRdXwToKkiFeOzp0-MdYXbMMI',
+                    "X-LC-Key": 'pTByOlWLacfjfBUR3mNIXhoM',
                     "Content-Type": "application/json"
                 },
             }
 
-            const res = await fetch('https://ujpkklj7.api.lncldglobal.com/1.1/classes/Comment?limit=8&order=-createdAt', settings)
+            const res = await fetch('https://0xiaeijg.api.lncldglobal.com/1.1/classes/Comment?limit=8&order=-createdAt', settings)
             const result = await res.json()
             window.res = result
             const valineArray = result.results.map(e => {
