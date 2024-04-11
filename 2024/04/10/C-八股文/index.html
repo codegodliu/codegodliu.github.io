@@ -120,7 +120,7 @@ console.log(
     covercolor: {
         enable: false
     },
-    comment: {"avatar":"https://cravatar.cn","url":null,"commentBarrage":true,"appId":"uJPKKLJ7wfYwc5XvhLVjkuz9-MdYXbMMI","appKey":"iJzRikaqa2tdeS1nQubTyE2x","owo":{"body":".vwrap","item":".vemojis i"}},
+    comment: {"avatar":"https://cravatar.cn","url":"https://ujpkklj7.api.lncldglobal.com","commentBarrage":true,"appId":"uJPKKLJ7wfYwc5XvhLVjkuz9-MdYXbMMI","appKey":"iJzRikaqa2tdeS1nQubTyE2x","owo":{"body":".vwrap","item":".vemojis i"}},
     lightbox: 'fancybox',
     post_ai: false,
     right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","music":{"start":"播放音乐","stop":"暂停音乐"}},
@@ -669,7 +669,7 @@ function AddRewardMask() {
             appId: 'uJPKKLJ7wfYwc5XvhLVjkuz9-MdYXbMMI',
             appKey: 'iJzRikaqa2tdeS1nQubTyE2x',
             avatar: 'monsterid',
-            serverURLs: '',
+            serverURLs: 'https://ujpkklj7.api.lncldglobal.com',
             emojiMaps: "",
             path: window.location.pathname,
             visitor: true,
@@ -749,7 +749,7 @@ function AddRewardMask() {
                 },
             }
 
-            const res = await fetch('/1.1/classes/Comment?limit=8&order=-createdAt', settings)
+            const res = await fetch('https://ujpkklj7.api.lncldglobal.com/1.1/classes/Comment?limit=8&order=-createdAt', settings)
             const result = await res.json()
             window.res = result
             const valineArray = result.results.map(e => {
