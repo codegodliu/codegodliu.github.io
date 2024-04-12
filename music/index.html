@@ -133,7 +133,7 @@ console.log(
     covercolor: {
         enable: false
     },
-    comment: {"avatar":"https://cravatar.cn","url":"https://0xiaeijg.api.lncldglobal.com","commentBarrage":true,"appId":"0xIAeIJgdRdXwToKkiFeOzp0-MdYXbMMI","appKey":"pTByOlWLacfjfBUR3mNIXhoM","owo":{"body":".vwrap","item":".vemojis i"}},
+    comment: {"avatar":"https://cravatar.cn","url":"https://538lgvvo.lc-cn-n1-shared.com","commentBarrage":true,"appId":"538lgvVOGkxySYOQ95RVcOTL-gzGzoHsz","appKey":"59YMWbtxZDc7jcwmXLb14qUU","owo":{"body":".vwrap","item":".vemojis i"}},
     lightbox: 'mediumZoom',
     post_ai: false,
     right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","music":{"start":"播放音乐","stop":"暂停音乐"},"barrage":{"open":"显示热评","close":"关闭热评"},"translate":{"translateDelay":0,"defaultEncoding":2}},
@@ -235,13 +235,13 @@ document.addEventListener('pjax:complete', () => {
             const settings = {
                 "method": "GET",
                 "headers": {
-                    "X-LC-Id": '0xIAeIJgdRdXwToKkiFeOzp0-MdYXbMMI',
-                    "X-LC-Key": 'pTByOlWLacfjfBUR3mNIXhoM',
+                    "X-LC-Id": '538lgvVOGkxySYOQ95RVcOTL-gzGzoHsz',
+                    "X-LC-Key": '59YMWbtxZDc7jcwmXLb14qUU',
                     "Content-Type": "application/json"
                 },
             }
 
-            const res = await fetch('https://0xiaeijg.api.lncldglobal.com/1.1/classes/Comment?limit=8&order=-createdAt', settings)
+            const res = await fetch('https://538lgvvo.lc-cn-n1-shared.com/1.1/classes/Comment?limit=8&order=-createdAt', settings)
             const result = await res.json()
             window.res = result
             const valineArray = result.results.map(e => {
