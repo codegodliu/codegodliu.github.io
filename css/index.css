@@ -3065,7 +3065,7 @@ span.tags-punctuation::before {
   height: 100%;
   left: 0;
   top: 0;
-  background: url("") center center no-repeat;
+  background: url("/img/zanzhu.jpg") center center no-repeat;
   content: '';
   background-size: cover;
   transition: 0.2s cubic-bezier(0.45, 0.04, 0.43, 1.21);
@@ -3105,7 +3105,7 @@ span.tags-punctuation::before {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   box-sizing: border-box;
-  background: url("") center center no-repeat;
+  background: url("/img/zanzhu.jpg") center center no-repeat;
   background-size: 100%;
 }
 #nav-music {
