@@ -3097,7 +3097,7 @@ span.tags-punctuation::before {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  background: url("/img/zanzhu.jpg") center center no-repeat;
+  background: url("https://s1.imagehub.cc/images/2024/04/15/37da9647161178b396a8dba4c195cf33.jpeg") center center no-repeat;
   background-size: 100%;
 }
 #aside-content .card-widget.card-platform #flip-wrapper #flip-content .face.back {
@@ -3105,7 +3105,7 @@ span.tags-punctuation::before {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   box-sizing: border-box;
-  background: url("/img/zanzhu.jpg") center center no-repeat;
+  background: url("https://s1.imagehub.cc/images/2024/04/15/37da9647161178b396a8dba4c195cf33.jpeg") center center no-repeat;
   background-size: 100%;
 }
 #nav-music {
