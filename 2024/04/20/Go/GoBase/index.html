@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GoBase | 逍遥码斋</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/first/my.jpg"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=1.7.12"><!-- inject head--><link rel="stylesheet" href="https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css"><!-- aplayer--><link rel="stylesheet" href="https://cdn.staticfile.net/aplayer/1.10.1/APlayer.min.css"><!-- swiper--><link rel="stylesheet" href="https://cdn.staticfile.net/Swiper/11.0.5/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.staticfile.net/fancyapps-ui/5.0.35/fancybox/fancybox.min.css"><link rel="stylesheet" href="https://cdn.staticfile.net/KaTeX/0.16.9/katex.min.css"><!-- Open Graph--><meta name="description" content="安装环境特性变量变量是数据地址的名字，变量可以在程序中修改其值。用于数据变化 分为全局变量和局部变量 默认值：  整型：0 浮点型：0.0 布尔：false 字符串：空字符串 指针型：nil  作用域变量有其生效的区域，这个区域，我们称之为作用域。  函数内部声明的变量，为局部变量，作用域仅限于函数内部 函数外部声明的变量，为全局变量，作用域在当前包有效，如果首字母大写，在所有包有效 &#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GoBase">
+<meta property="og:url" content="https://familycode.gitee.io/2024/04/20/Go/GoBase/index.html">
+<meta property="og:site_name" content="逍遥码斋">
+<meta property="og:description" content="安装环境特性变量变量是数据地址的名字，变量可以在程序中修改其值。用于数据变化 分为全局变量和局部变量 默认值：  整型：0 浮点型：0.0 布尔：false 字符串：空字符串 指针型：nil  作用域变量有其生效的区域，这个区域，我们称之为作用域。  函数内部声明的变量，为局部变量，作用域仅限于函数内部 函数外部声明的变量，为全局变量，作用域在当前包有效，如果首字母大写，在所有包有效 &#123;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2024/04/20/d93739a98537e3587ef013211e248891.webp">
+<meta property="article:published_time" content="2024-04-19T17:35:07.000Z">
+<meta property="article:modified_time" content="2024-04-19T17:38:55.292Z">
+<meta property="article:author" content="masterliu">
+<meta property="article:tag" content="Go">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.imagehub.cc/images/2024/04/20/d93739a98537e3587ef013211e248891.webp"><!-- pwa--><script>(win => {
+        win.saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay,
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        }
+
+        const DarkModeStatus = localStorage.getItem('theme')
+        if (DarkModeStatus !== null) {
+            if (DarkModeStatus === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark')
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light')
+            }
+        }
+
+        const asideStatus = saveToLocal.get('aside-status')
+        if (asideStatus !== undefined) {
+            if (asideStatus === 'hide') {
+                document.documentElement.classList.add('hide-aside')
+            } else {
+                document.documentElement.classList.remove('hide-aside')
+            }
+        }
+
+        win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+            const link = document.createElement('link')
+            link.rel = 'stylesheet'
+            link.href = url
+            if (id) link.id = id
+            link.onerror = reject
+            link.onload = link.onreadystatechange = function () {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+            }
+            document.head.appendChild(link)
+        })
+
+        win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+            const script = document.createElement('script')
+            script.src = url
+            script.async = true
+            script.onerror = reject
+            script.onload = script.onreadystatechange = function () {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+            }
+
+            Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+            })
+
+            document.head.appendChild(script)
+        })
+    }
+)(window)
+
+console.log(
+    "%c Program: Hexo %c Theme: Solitude %c Version: v1.7.12",
+    "border-radius:5px 0 0 5px;padding: 5px 10px;color:white;background:#ff3842;",
+    "padding: 5px 10px;color:white;background:#3e9f50;",
+    "border-radius:0 5px 5px 0;padding: 5px 10px;background:#0084ff;color:white;"
+);</script><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3I4rPmjJIMllR8AC",ck:"3I4rPmjJIMllR8AC"})</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: {"preload":false,"path":"/search.xml"},
+    runtime: '2024-04-10 00:00:00',
+    lazyload: {
+        enable: true,
+        error: '/img/error_load.png'
+    },
+    copyright: {"limit":50,"author":"作者: masterliu","link":"链接: ","source":"来源: 逍遥码斋","info":"著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。"},
+    highlight: {
+        enable: true,
+        limit: 200,
+        expand: true,
+        copy: true,
+        syntax: 'highlight.js'
+    },
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可","search":{"empty":"找不到你查询的内容：${query}","hit":"找到 ${hits} 条结果，用时 ${time} 毫秒","placeholder":"输入关键词快速查找","count":"共 <b>${count}</b> 条结果。"},"barrage":{"title":"热评"}},
+    aside: {
+        sayhello: {
+            morning: '一日之计在于晨',
+            noon: '吃饱了才有力气干活',
+            afternoon: '集中精力，攻克难关',
+            night: '不要太劳累了，早睡更健康',
+            goodnight: '睡个好觉，保证精力充沛',
+        },
+        sayhello2: ["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多","🎮 电竞游戏爱好者"],
+    },
+    covercolor: {
+        enable: false
+    },
+    comment: {"avatar":"https://cravatar.cn","url":"https://538lgvvo.lc-cn-n1-shared.com","commentBarrage":true,"appId":"538lgvVOGkxySYOQ95RVcOTL-gzGzoHsz","appKey":"59YMWbtxZDc7jcwmXLb14qUU","owo":{"body":".vwrap","item":".vemojis i"}},
+    lightbox: 'mediumZoom',
+    post_ai: false,
+    right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","music":{"start":"播放音乐","stop":"暂停音乐"},"barrage":{"open":"显示热评","close":"关闭热评"},"translate":{"translateDelay":0,"defaultEncoding":2}},
+};</script><meta name="generator" content="Hexo 7.1.1"></head><body id="body"><!-- universe--><canvas id="universe"></canvas><!-- loading--><div id="loading-box" onclick="preloader.endLoading();" style="zoom:1"><div class="loading-bg"><img class="loading-img nolazyload" src="/img/first/my.jpg" alt="loading image"></div></div><script>const preloader = {
+    endLoading: () => {
+        document.getElementById('loading-box').classList.toggle('loaded');
+    },
+    initLoading: () => {
+        document.getElementById('loading-box').classList.remove('loaded');
+    },
+    removePaceDone: () => {
+        document.getElementById('body').classList = 'pace-done';
+    }
+}
+window.addEventListener('load', () => {
+    preloader.endLoading();
+});
+window.addEventListener('pjax:send', () => {
+    preloader.initLoading();
+});
+document.addEventListener('pjax:complete', () => {
+    preloader.endLoading();
+});</script><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude st-close-fill"></i></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><div class="author-content-item-title">最新评论</div></div><div class="aside-list"></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/C/">C++<sup>1</sup></a><a href="/tags/Go/">Go<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" onclick="pjax.loadUrl('/archives/2024/04/')" href="javascript:void(0);"><span class="card-archive-list-date">2024/04</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span class="card-archive-list-count-unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude st-moon-clear-fill"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude st-side-bar-fill"></i></span></div><div class="console-btn-item" id="consoleMusic" onclick="sco.musicToggle()"><span class="music-switch" title="音乐开关"><i class="solitude st-disc-fill"></i></span></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="sco.switchCommentBarrage()"><span class="commentBarrage"><i class="solitude st-chat-fill"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude st-moon-clear-fill"></i><span>显示模式</span></span></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">目录</div><div class="back-menu-list"><a class="back-menu-item" href="/categories/C" title="C++"><img class="nolazyload back-menu-item-icon" src="https://s1.imagehub.cc/images/2024/04/15/d92a896f32df62a38f9be2ad3db0d642.webp" alt="C++"><span class="back-menu-item-text">C++</span></a><a class="back-menu-item" href="/categories/Go" title="Go"><img class="nolazyload back-menu-item-icon" src="https://s1.imagehub.cc/images/2024/04/20/2bb21c70e3fd19ed7cd0a61b961fe363.png" alt="Go"><span class="back-menu-item-text">Go</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  st-folder-fill"></i><span>文章列表</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  st-checkbox-multiple-blank-fill"></i><span>全部分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  st-price-tag-fill"></i><span>全部标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/tlink/"><i class="solitude  st-tools-fill"></i><span>工具箱</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  st-disc-fill"></i><span>音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  st-contacts-fill"></i><span>关于本站</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/C/">C++<sup>1</sup></a><a href="/tags/Go/">Go<sup>1</sup></a></div></div></div></div><!-- keyboard--><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><div class="back-home-button" tabindex="-1"><i class="back-home-button-icon solitude st-more-fill"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">目录</div><div class="back-menu-list"><a class="back-menu-item" href="/categories/C" title="C++"><img class="nolazyload back-menu-item-icon" src="https://s1.imagehub.cc/images/2024/04/15/d92a896f32df62a38f9be2ad3db0d642.webp" alt="C++"><span class="back-menu-item-text">C++</span></a><a class="back-menu-item" href="/categories/Go" title="Go"><img class="nolazyload back-menu-item-icon" src="https://s1.imagehub.cc/images/2024/04/20/2bb21c70e3fd19ed7cd0a61b961fe363.png" alt="Go"><span class="back-menu-item-text">Go</span></a></div></div></div></div><a id="site-name" href="/" title="返回博客主页"><span class="title">逍遥码斋</span></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">GoBase</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  st-folder-fill"></i><span>文章列表</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  st-checkbox-multiple-blank-fill"></i><span>全部分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  st-price-tag-fill"></i><span>全部标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/tlink/"><i class="solitude  st-tools-fill"></i><span>工具箱</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  st-disc-fill"></i><span>音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  st-contacts-fill"></i><span>关于本站</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="travellings_button"><a class="site-page" target="_blank" rel="noopener" href="https://leetcode.cn/" title=""><i class="solitude st-train-line"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机一篇文章" href="javascript:void(0);"><i class="solitude st-signal-tower-fill"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="solitude st-search-line"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><i class="solitude st-dashboard-fill"></i></a></div><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude st-arrow-up-line"></i><span id="percent">0</span></a></div><script>document.addEventListener('DOMContentLoaded', () => {
+    const percent = () => {
+        let scrollTop = document.documentElement.scrollTop || window.pageYOffset
+        let totalHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.clientHeight
+        let scrollPercent = Math.round(scrollTop / totalHeight * 100)
+        let percentElement = document.querySelector("#percent")
+        let viewportBottom = window.scrollY + document.documentElement.clientHeight
+        let remainingScroll = totalHeight - scrollTop
+
+        if ((document.getElementById("post-comment") || document.getElementById("footer")).offsetTop < viewportBottom || scrollPercent > 90) {
+            document.querySelector("#nav-totop").classList.add("long")
+            percentElement.innerHTML = GLOBAL_CONFIG.lang.backtop
+        } else {
+            document.querySelector("#nav-totop").classList.remove("long")
+            if (scrollPercent >= 0) {
+                percentElement.innerHTML = scrollPercent + ""
+            }
+        }
+
+        let elementsToHide = document.querySelectorAll(".needEndHide")
+        if (remainingScroll < 100) {
+            elementsToHide.forEach(function (element) {
+                element.classList.add("hide")
+            })
+        } else {
+            elementsToHide.forEach(function (element) {
+                element.classList.remove("hide")
+            })
+        }
+
+        window.onscroll = percent
+    }
+    percent()
+})</script><div id="toggle-menu"><a class="site-page"><i class="solitude st-menu-line"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="https://s1.imagehub.cc/images/2024/04/20/d93739a98537e3587ef013211e248891.webp" alt="GoBase"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/Go/">Go</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Go/"><span class="tags-name tags-punctuation">Go</span></a></div></div></div></div><h1 class="post-title">GoBase</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2024-04-20 01:35:07"><i class="post-meta-icon solitude st-calendar-todo-fill"></i><time datetime="2024-04-19T17:35:07.000Z">2024-04-19T17:35:07.000Z</time></span><span class="post-meta-date" title="最后更新于 2024-04-20 01:38:55"><i class="post-meta-icon solitude st-refresh-line"></i><time datetime="2024-04-19T17:38:55.292Z">2024-04-19T17:38:55.292Z</time></span><span class="post-meta-wordcount"><i class="post-meta-icon solitude st-word-fill" title="文章字数"></i><span class="word-count">844</span><span class="post-meta-separator"></span><i class="post-meta-icon solitude st-clock-fill" title="阅读耗时"></i><span>3 min</span></span><span class="post-meta-position" title="作者IP归属地为武汉"><i class="post-meta-icon solitude st-map-pin-fill"></i><span>武汉</span></span><a class="post-meta-pv" href="/2024/04/20/Go/GoBase/" title="文章热度"><i class="post-meta-icon solitude st-fire-fill"></i><span class="leancloud_visitors" id="/2024/04/20/Go/GoBase/"><span class="leancloud-visitors-count"><i class="solitude st-loading-line"></i></span></span></a><span class="post-meta-commentcount" title="评论数" onclick="sco.scrollTo('post-comment')"><i class="solitude st-chat-fill"></i><a href="/2024/04/20/Go/GoBase/#post-comment"><span class="valine-comment-count" data-xid="/2024/04/20/Go/GoBase/" itemprop="commentCount"><i class="solitude st-loading-line"></i></span></a></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>变量是数据地址的名字，变量可以在程序中修改其值。用于数据变化</p>
+<p>分为全局变量和局部变量</p>
+<p>默认值：</p>
+<ul>
+<li>整型：0</li>
+<li>浮点型：0.0</li>
+<li>布尔：false</li>
+<li>字符串：空字符串</li>
+<li>指针型：nil</li>
+</ul>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>变量有其生效的区域，这个区域，我们称之为<code>作用域</code>。</p>
+<ul>
+<li>函数内部声明的变量，为<code>局部变量</code>，作用域仅限于函数内部</li>
+<li>函数外部声明的变量，为<code>全局变量</code>，作用域在当前包有效，如果首字母大写，在所有包有效</li>
+<li><code>&#123;&#125;</code>包括的区域，称之为代码块，如果变量定义在<code>&#123;&#125;</code>内部，只在代码块内有效</li>
+</ul>
+<h2 id="声明定义变量"><a href="#声明定义变量" class="headerlink" title="声明定义变量"></a>声明定义变量</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//第一种：指定变量类型，声明后若不赋值，使用默认值</span></span><br><span class="line">    <span class="comment">//int 的默认值是0</span></span><br><span class="line">    <span class="keyword">var</span> a <span class="type">int</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;a=&quot;</span>, a)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//第二种：根据值自行判定变量类型(类型推导)</span></span><br><span class="line">    <span class="keyword">var</span> b= <span class="number">10.11</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;b=&quot;</span>, b)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//第三种：省略var，注意:=左侧的变量不应该是已经声明过的，否则会导致编译错误</span></span><br><span class="line">    <span class="comment">//下面的方式等价var num string name = &quot;tom&quot;</span></span><br><span class="line">    <span class="comment">//:=的:不能省略，否则错误</span></span><br><span class="line">    c := <span class="string">&quot;tom&quot;</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;c=&quot;</span>, c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="批量定义变量"><a href="#批量定义变量" class="headerlink" title="批量定义变量"></a>批量定义变量</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//一次性声明多个变量</span></span><br><span class="line">    <span class="keyword">var</span> n1, n2, n3 <span class="type">int</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;n1=&quot;</span>, n1, <span class="string">&quot;n2=&quot;</span>, n2, <span class="string">&quot;n3=&quot;</span>, n3)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//一次性声明多个变量的方式2</span></span><br><span class="line">    <span class="keyword">var</span> t1, t2, t3 = <span class="number">100</span>, <span class="string">&quot;tom&quot;</span>, <span class="number">888</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;t1=&quot;</span>, t1, <span class="string">&quot;t2=&quot;</span>, t2, <span class="string">&quot;t3=&quot;</span>, t3)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//一次性声明多个变量的方式3，同样可以使用类型推导</span></span><br><span class="line">    f1, f2, f3 := <span class="number">100</span>, <span class="string">&quot;tom&quot;</span>, <span class="number">888</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;f1=&quot;</span>, f1, <span class="string">&quot;f2=&quot;</span>, f2, <span class="string">&quot;f3=&quot;</span>, f3)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><p>定义成大写，可被其他文件调用。</p>
+<p>全局变量的生命周期跟随程序的生命周期</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"><span class="comment">//定义全局变量</span></span><br><span class="line"><span class="keyword">var</span> h1 = <span class="number">100</span></span><br><span class="line"><span class="keyword">var</span> h2 = <span class="number">200</span></span><br><span class="line"><span class="keyword">var</span> h3 = <span class="string">&quot;jack&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//上面的声明方式，也可以改成一次性声明</span></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">        n3 = <span class="number">300</span></span><br><span class="line">        n4 = <span class="number">900</span></span><br><span class="line">        n5 = <span class="string">&quot;mary&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;h1=&quot;</span>, h1, <span class="string">&quot;h2=&quot;</span>, h2, <span class="string">&quot;h3=&quot;</span>, h3)</span><br><span class="line">    fmt.Println(<span class="string">&quot;n3=&quot;</span>, n3, <span class="string">&quot;n4=&quot;</span>, n4, <span class="string">&quot;n5=&quot;</span>, n5)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p>常量不能在整个程序生命周期内不能被修改</p>
+<h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><p>(1)常量使用const修改</p>
+<p>(2)常量在定义的时候，必须初始化</p>
+<p>(3)常量不能修改</p>
+<p>(4)常量只能修饰bool、数值类型(int、float系列)、string类型</p>
+<p>(5)语法：const identifier [type] &#x3D;value</p>
+<h2 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h2><p>在golang中并没有枚举这种类型，但在go中有类似的方式，就是使用<code>iota</code>常量生成器。从定义开始，iota值从0加1</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// iota从定义开始，每行开始自增1</span></span><br><span class="line"><span class="comment">// 当遇到新的赋值后，例如d和f，后续没有重新赋值iota，那么后续常量还是之前的赋值，如e和g</span></span><br><span class="line"><span class="comment">// 又赋值为iota后，看自增到多少，如h和i</span></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">   a = <span class="literal">iota</span></span><br><span class="line">   b        </span><br><span class="line">   c = <span class="literal">iota</span>+<span class="number">2</span>     </span><br><span class="line">   d = <span class="string">&quot;hi&quot;</span> </span><br><span class="line">   e      </span><br><span class="line">   f = <span class="number">100</span>  </span><br><span class="line">   g        </span><br><span class="line">   h, i = <span class="literal">iota</span> + <span class="number">1</span>, <span class="literal">iota</span> </span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   fmt.Println(a, b, c, d, e, f, g, h, i)</span><br><span class="line">   <span class="comment">// 输出: 0 1 4 hi hi 100 100 8 7</span></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">const</span> name=<span class="string">&quot;tom&quot;</span> <span class="comment">//ok</span></span><br><span class="line">    <span class="keyword">const</span> tax <span class="type">float64</span>=<span class="number">0.8</span> <span class="comment">//ok</span></span><br><span class="line">    <span class="keyword">const</span> a <span class="type">int</span> <span class="comment">//error,没有初始化值</span></span><br><span class="line">    <span class="keyword">const</span> b=<span class="number">9</span>/<span class="number">3</span> <span class="comment">//ok</span></span><br><span class="line">    <span class="keyword">const</span> c = getVal() <span class="comment">//error</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1></article><div class="post-copyright"><div class="post-copyright__author_group"><a class="post-copyright__author_img" href="/about/"><img class="post-copyright__author_img_front" src="/img/first/my.jpg"></a><div class="post-copyright__author_name">逍遥码斋</div><div class="post-copyright__author_desc">码斋ing</div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div><div class="post-reward" onclick="AddRewardMask()"><div class="reward-button" title="赞赏作者"><i class="solitude st-hand-heart-fill"></i>赞赏作者</div><div class="reward-main"><ul class="reward-all"><span class="reward-title">感谢您的赞赏。</span><ul class="reward-group"><li class="reward-item"><img class="post-qr-code-img nolazyload" src="/img/zhifubao.jpg" alt="支付宝" style="border-color: var(--efu-blue)"><div class="post-qr-code-desc">支付宝</div></li><li class="reward-item"><img class="post-qr-code-img nolazyload" src="/img/weixin.jpg" alt="微信" style="border-color: var(--efu-blue)"><div class="post-qr-code-desc">微信</div></li></ul><a class="reward-main-btn" href="/about"><div class="reward-text">赞赏名单</div><div class="reward-dec">因为有你们的支持，我才体会到写文章的价值。</div></a></ul></div></div><script>function RemoveRewardMask() {
+    let rewardMainElements = document.querySelectorAll(".reward-main");
+    let quitBoxElement = document.querySelector("#quit-box");
+
+    console.log("RemoveRewardMask")
+
+    rewardMainElements.forEach(element => {
+        element.style.display = "none";
+    });
+
+    if (quitBoxElement) {
+        quitBoxElement.style.display = "none";
+    }
+}
+
+function AddRewardMask() {
+    let rewardMainElements = document.querySelectorAll(".reward-main");
+    let quitBoxElement = document.querySelector("#quit-box");
+
+    console.log("AddRewardMask")
+
+    rewardMainElements.forEach(element => {
+        element.style.display = "flex";
+    });
+
+    if (quitBoxElement) {
+        quitBoxElement.style.display = "flex";
+    }
+}</script></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">逍遥码斋</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Go/"><span class="tags-punctuation"></span>Go<span class="tagsPageCount">1</span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/04/10/C++/C-%E5%85%AB%E8%82%A1%E6%96%87/"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++八股文</div></div></a></div></nav><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="solitude st-chat-fill"></i><span>评论</span><span></span></div></div><div class="comment-wrap"><div id="comment"></div><script>async function initComment() {
+    const initValine = () => {
+        const valine = new Valine(Object.assign({
+            el: '#comment',
+            appId: '538lgvVOGkxySYOQ95RVcOTL-gzGzoHsz',
+            appKey: '59YMWbtxZDc7jcwmXLb14qUU',
+            avatar: 'monsterid',
+            serverURLs: 'https://538lgvvo.lc-cn-n1-shared.com',
+            emojiMaps: "",
+            path: window.location.pathname,
+            visitor: true,
+            ...{"placeholder":"欢迎各位评论"}
+        }))
+
+        if (GLOBAL_CONFIG.lightbox) {
+            utils.lightbox(document.querySelectorAll('#comment .vcontent img:not(.vemoji)'));
+        }
+
+        sco.owoBig();
+    }
+
+    const loadValine = async () => {
+        if (typeof Valine === 'function') initValine()
+        else {
+            await getScript('https://cdn.staticfile.net/valine/1.5.1/Valine.min.js')
+            initValine()
+        }
+    }
+
+    if (!true) {
+        if (true) utils.loadComment(document.getElementById('comment'), loadValine)
+        else setTimeout(loadValine, 0)
+    } else {
+        await loadValine()
+    }
+}</script></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div><div class="avatar-img-group"><img class="avatar-img" alt="头像" src="/img/first/my.jpg"><div class="avatar-sticker"><img class="avatar-sticker-img" src="https://7.isyangs.cn/34/65f2e4e0423cc-34.png" alt="心情贴纸"></div></div><div class="author-info__description_group"><div class="author-info__description">分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。</div><div class="author-info__description2">相信你可以在这里找到对你有用的知识和教程。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about/"><div class="author-info__name">masterliu</div><div class="author-info__desc">码斋ing</div></a><div class="card-info-social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/572192274" title="Github"><i class="solitude  st-github-line"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/400410886" title="Bilibili"><i class="solitude  st-bilibili-line"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude st-menu-line"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-text">安装环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%B9%E6%80%A7"><span class="toc-text">特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-text">声明定义变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-text">批量定义变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">全局变量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-text">常量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99"><span class="toc-text">规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F"><span class="toc-text">定义常量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude st-map-line"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/04/20/Go/GoBase/" title="GoBase"><img alt="GoBase" src="https://s1.imagehub.cc/images/2024/04/20/d93739a98537e3587ef013211e248891.webp"></a><div class="content"><a class="title" href="/2024/04/20/Go/GoBase/" title="GoBase">GoBase</a><a class="article-recent_post_categories" href="/2024/04/20/Go/GoBase/">Go</a></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/10/C++/C-%E5%85%AB%E8%82%A1%E6%96%87/" title="C++八股文"><img alt="C++八股文" src="https://s1.imagehub.cc/images/2024/04/15/20f14bf26a642f346575be86a56dc8ac.jpeg"></a><div class="content"><a class="title" href="/2024/04/10/C++/C-%E5%85%AB%E8%82%A1%E6%96%87/" title="C++八股文">C++八股文</a><a class="article-recent_post_categories" href="/2024/04/10/C++/C-%E5%85%AB%E8%82%A1%E6%96%87/">C++</a></div></div></div></div></div></div></main><footer id="footer"><div id="st-footer-bar"><div class="footer-logo"><span class="solitude">逍遥码斋</span></div><div class="footer-bar-description">来自逍遥码斋 - 码斋ing的文章</div><a class="footer-bar-link" href="/">了解更多</a></div><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/572192274" title="Github"><i class="solitude  st-github-line"></i></a><a class="deal_link" href="/572192274@qq.com" title="Mail"><i class="solitude  st-mail-line"></i></a><div class="nolazyload footer_mini_logo" id="footer_mini_logo" title="返回顶部" onclick="sco.toTop()"><img src= "/img/loading.gif" data-lazy-src="/img/first/my.jpg" alt="返回顶部"></div><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/400410886" title="Bilibili"><i class="solitude  st-bilibili-line"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.douyin.com/user/MS4wLjABAAAAE_LMLYq30fDdsoFzPaqj9fQld9ovK1dnD89b_mDcVvgVEqptdZnvkgnOlwFM4niN" title="抖音"><i class="solitude  st-douyin-fill"></i></a></div><div id="st-footer"><div class="footer-group"><h3 class="footer-title">导航</h3><div class="footer-links"><a class="footer-item" href="/archives/" title="归档">归档</a><a class="footer-item" href="/categories/" title="分类">分类</a><a class="footer-item" href="/tags/" title="标签">标签</a></div></div><div class="footer-group"><h3 class="footer-title">支持</h3><div class="footer-links"><a class="footer-item" href="/about/" title="打赏记录">打赏记录</a></div></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2024 By&nbsp;<a class="footer-bar-link" href="/">masterliu</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/572192274" title="主题">主题</a><a class="footer-bar-link cc" href="/null" aria-label="copyright"><i class="solitude st-copyright-line"></i><i class="solitude st-creative-commons-by-line"></i><i class="solitude st-creative-commons-nc-line"></i><i class="solitude st-creative-commons-nd-line"></i></a></div></div></div><div class="comment-barrage needEndHide"></div></footer></div><!-- right_menu--><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude st-arrow-left-line"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude st-arrow-right-line"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude st-restart-line"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude st-arrow-up-line"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="solitude st-copy-fill"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="solitude st-clipboard-fill"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-commenttext"><i class="solitude st-chat-new-fill"></i><span>引用到评论</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="solitude st-window-fill"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="solitude st-link-line"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="solitude st-copy-fill"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="solitude st-download-cloud-fill"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-search"><i class="solitude st-search-line"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="solitude st-play-fill"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="solitude st-skip-back-fill"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="solitude st-skip-forward-fill"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="solitude st-copy-fill"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-randomPost" onclick="toRandomPost()||rm.hideRightMenu()"><i class="solitude st-signal-tower-fill"></i><span>随机短文</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/categories/')||rm.hideRightMenu()"><i class="solitude st-checkbox-multiple-blank-fill"></i><span>全部分类</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/tags/')||rm.hideRightMenu()"><i class="solitude st-price-tag-fill"></i><span>全部标签</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-commentBarrage" onclick="sco.switchCommentBarrage()"><i class="solitude st-chat-fill"></i><span class="menu-commentBarrage-text">显示热评</span></div><div class="rightMenu-item" id="menu-darkmode" onclick="sco.switchDarkMode()"><i class="solitude st-moon-clear-fill"></i><span class="menu-darkmode-text">浅色模式</span></div><div class="rightMenu-item" id="menu-translate"><i class="solitude st-panben-line"></i><span>轉為繁體</span></div></div></div><div id="rightmenu-mask"></div><!-- inject body--><div><script src="/js/main.js?v=1.7.12"></script><script src="/js/utils.js?v=1.7.12"></script><script src="/js/third_party/waterfall.min.js?v=1.7.12"></script><script src="https://cdn.staticfile.net/pjax/0.2.8/pjax.min.js"></script><!-- md5--><script src="https://cdn.staticfile.net/blueimp-md5/2.19.0/js/md5.min.js"></script><script src="https://cdn.staticfile.net/mermaid/10.8.0/mermaid.min.js"></script><script src="/js/third_party/universe.min.js?v=1.7.12"></script><script>dark()
+</script><script src="/js/tw_cn.js?v=1.7.12"></script><script src="https://cdn.staticfile.net/KaTeX/0.16.9/contrib/copy-tex.min.js"><script>(() => {
+    document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+        utils.wrap(item, 'div', {class: 'katex-wrap'})
+    })
+})();
+</script></script><script src="https://cdn.staticfile.net/vanilla-lazyload/19.1.3/lazyload.iife.min.js"></script><script src="https://cdn.staticfile.net/node-snackbar/0.1.16/snackbar.min.js"></script><script src="https://cdn.staticfile.net/medium-zoom/1.1.0/medium-zoom.min.js"></script><script src="https://cdn.staticfile.net/fancyapps-ui/5.0.35/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.staticfile.net/Swiper/11.0.5/swiper-bundle.min.js"></script><script src="https://cdn.staticfile.net/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.staticfile.net/meting/2.0.1/Meting.min.js"></script><script>const meting_api = 'https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+</script><script src="/js/commentBarrage/valine.js?v=1.7.12"></script><script src="/js/music.js?v=1.7.12"></script><script src="https://cdn.staticfile.net/pace/1.2.4/pace.min.js"></script><script src="/js/right_menu.js?v=1.7.12"></script></div><div id="js-pjax"><script>mermaid.run();</script><script async src="https://cdn.staticfile.net/busuanzi/2.3.0/bsz.pure.mini.min.js"></script><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: 'post',
+    toc: true,
+    comment: true,
+}
+</script></div><!-- newest comment--><script>window.addEventListener('load', () => {
+    const changeContent = (content) => {
+        if (content === '') return content;
+
+        const replacements = [
+            {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '[Image]'},
+            {regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, replacement: '[URL]'},
+            {regex: /```[\s\S]*?```/g, replacement: '[Code]'},
+            {regex: /<[^>]+>/g, replacement: ""}
+        ];
+
+        content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content);
+
+        return content.length > 150 ? content.substring(0, 150) + '...' : content;
+    }
+
+    const $asideList = document.querySelector('#card-newest-comments .aside-list')
+    const newestCommentInit = () => {
+        const data = saveToLocal.get('valine-newest-comment')
+        if (data) {
+            generateHtml(JSON.parse(data))
+        } else {
+            getComment()
+        }
+    }
+
+    const getComment = async () => {
+        try {
+            const settings = {
+                "method": "GET",
+                "headers": {
+                    "X-LC-Id": '538lgvVOGkxySYOQ95RVcOTL-gzGzoHsz',
+                    "X-LC-Key": '59YMWbtxZDc7jcwmXLb14qUU',
+                    "Content-Type": "application/json"
+                },
+            }
+
+            const res = await fetch('https://538lgvvo.lc-cn-n1-shared.com/1.1/classes/Comment?limit=8&order=-createdAt', settings)
+            const result = await res.json()
+            window.res = result
+            const valineArray = result.results.map(e => {
+                return {
+                    'content': changeContent(e.comment),
+                    'avatar': 'https://cravatar.cn' + '/avatar/' + md5(e.mail.toLowerCase()),
+                    'nick': e.nick,
+                    'url': e.url + '#' + e.objectId,
+                    'date': e.updatedAt || e.createdAt
+                }
+            })
+            saveToLocal.set('valine-newest-comment', JSON.stringify(valineArray), 421000 / (60 * 24))
+            generateHtml(valineArray)
+        } catch (err) {
+            console.error(err)
+            $asideList.textContent = "无法获取评论，请确认相关配置是否正确。"
+        }
+    }
+
+    const generateHtml = array => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML = array.length ? array.map(item => `
+                    <div class='aside-list-item'>
+                      <a onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
+                        <img src= "/img/loading.gif" data-lazy-src='${item.avatar}' alt='${item.nick}'>
+                        <div class='name'><span>${item.nick}</span></div>
+                      </a>
+                      <div class='content'>
+                        <a class='comment' onclick='pjax.loadUrl("${item.url}")'>${item.content}</a>
+                        <time class="datetime" datetime="${item.date}"></time>
+                      </div>
+                    </div>
+                  `).join('') : "没有评论"
+        window.lazyLoadInstance && window.lazyLoadInstance.update()
+        window.pjax && window.pjax.refresh()
+        sco && sco.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
+    }
+
+    newestCommentInit()
+})</script><!-- pjax--><script>let pjaxSelectors = [
+    'title',
+    '#body-wrap',
+    '#site-config',
+    'meta[name="description"]',
+    '#js-pjax',
+    'meta[property^="og:"]',
+]
+
+const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- theme--><script>initTheme = () => {
+    const cachedMode = saveToLocal.get('theme');
+    if (cachedMode === undefined)
+        document.documentElement.setAttribute('data-theme', 'dark');
+    else
+        document.documentElement.setAttribute('data-theme', cachedMode);
+}
+initTheme()</script><!-- google adsense--><!-- search--><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="solitude st-close-fill"></i></button></nav><div class="search-wrap"><div class="search-box"><input class="search-box-input" id="search-input" type="text" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="输入关键词快速查找"></div><div id="search-results"><div id="search-hits"><a class="tag-list" href="javascript:void(0);" onclick="pjax.loadUrl('/tags/C++/')">C++</a></div></div><div id="search-pagination"></div><div id="search-tips"></div></div></div><div id="search-mask"></div></div><script src="/js/search/local.js?v=1.7.12"></script><!-- music--><div class="needEndHide" id="nav-music" onclick="sco.musicToggle()"><div id="nav-music-hoverTips">音乐已暂停</div><meting-js id="8407304077" server="netease" type="playlist" mutex="true" preload="none" data-lrctype="0" order="random" theme="var(--efu-main)"></meting-js></div></body></html><script>const posts=["2024/04/20/Go/GoBase/","2024/04/10/C++/C-八股文/"];function toRandomPost(){ pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]); }</script>
